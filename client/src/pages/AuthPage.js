@@ -47,7 +47,13 @@ export const AuthPage = () => {
       <div>
         <div>
           <br />
-          <h5>Setup a quick profile</h5>
+          <h5>Register, or you can also use this user</h5>
+          <br />
+          <div style={{ display: 'flex', flexDirection: 'column' }}>
+            <span>test@user.com</span>
+            <span>testuser</span>
+          </div>
+          <br />
           <br />
           <div>
             <label htmlFor='email'>Email</label>
