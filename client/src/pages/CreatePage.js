@@ -16,40 +16,57 @@ export const CreatePage = () => {
     window.M.updateTextFields();
   }, []);
 
-  const pressHandler = async (e) => {
-    if (e.key === 'Enter') {
-      const data = await request(
-        '/api/link/generate',
-        'POST',
-        { from: link },
-        {
-          Authorization: `Bearer ${auth.token}`,
-        }
-      );
-      navigate(`/detail/${data.link._id}`, { replace: true });
-      console.log(data);
+  useEffect(() => {
+    console.log(isUrl(link));
+  }, [link]);
 
-      try {
-      } catch (error) {}
+  const isUrl = (string) => {
+    try {
+      return Boolean(new URL(string));
+    } catch (e) {
+      return false;
     }
+  };
+
+  const handleSubmit = async (e) => {
+    const data = await request(
+      '/api/link/generate',
+      'POST',
+      { from: link },
+      {
+        Authorization: `Bearer ${auth.token}`,
+      }
+    );
+    navigate(`/detail/${data.link._id}`, { replace: true });
+    console.log(data);
+
+    try {
+    } catch (error) {}
   };
 
   return (
     <div className='row'>
-      <h2>Create</h2>
+      <h3>Paste the URL to be shortened</h3>
       <div className='col s8 offset-s2' style={{ paddingTop: '2rem' }}>
         <div>
-          <label htmlFor='link'>Link</label>
+          <label htmlFor='link'>URL</label>
           <input
-            placeholder='Place your link'
+            placeholder='Place your URL here'
             name='link'
             id='link'
             type='text'
             value={link}
             onChange={(e) => setLink(e.target.value)}
-            onKeyPress={pressHandler}
           />
+          <button
+            className='waves-effect waves-light btn-small'
+            disabled={!isUrl(link)}
+            onClick={handleSubmit}
+          >
+            Shorten URL
+          </button>
         </div>
+        {!isUrl(link) && <p>Please add a valid URL</p>}
       </div>
     </div>
   );

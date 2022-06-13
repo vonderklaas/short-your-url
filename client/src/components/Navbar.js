@@ -15,13 +15,13 @@ export const Navbar = () => {
   return (
     <nav>
       <div className='nav-wrapper blue darken-1' style={{ padding: '0 2rem' }}>
-        <span className='brand-logo'>URL Shortener</span>
+        <span className='brand-logo'>miniUrl</span>
         <ul id='nav-mobile' className='right hide-on-med-and-down'>
           <li>
             <Link to='/create'>Create</Link>
           </li>
           <li>
-            <Link to='/links'>Links</Link>
+            <Link to='/links'>My links</Link>
           </li>
           <li>
             <a href='/' onClick={logoutHandler}>

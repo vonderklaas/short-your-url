@@ -43,11 +43,12 @@ export const AuthPage = () => {
 
   return (
     <>
-      <h2>URL Shortener</h2>
+      <h3>miniUrl</h3>
       <div>
         <div>
           <br />
-          <h5>Authorization</h5>
+          <h5>Setup a quick profile</h5>
+          <br />
           <div>
             <label htmlFor='email'>Email</label>
             <input
@@ -75,10 +76,19 @@ export const AuthPage = () => {
         </div>
         <br />
         <div>
-          <button disabled={loading} onClick={loginHandler}>
+          <button
+            className='waves-effect waves-light btn-small'
+            disabled={loading}
+            onClick={loginHandler}
+          >
             Login
           </button>
-          <button disabled={loading} onClick={registerHandler}>
+          <button
+            style={{ marginLeft: '15px' }}
+            className='waves-effect waves-light btn-small'
+            disabled={loading}
+            onClick={registerHandler}
+          >
             Register
           </button>
         </div>

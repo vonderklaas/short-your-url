@@ -30,7 +30,6 @@ export const DetailPage = () => {
 
   return (
     <>
-      <h1>DetailPage</h1>
       <div>{!loading && link && <LinkCard link={link} />}</div>
     </>
   );

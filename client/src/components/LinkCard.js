@@ -4,15 +4,15 @@ export const LinkCard = ({ link }) => {
   console.log(link);
   return (
     <div>
-      <h2>Link</h2>
+      <h3>Results</h3>
       <p>
-        Your link:{' '}
+        Shortened:{' '}
         <a target='_blank' rel='noopener noreferrer' href={link.to}>
-          {link.to}
+          {link.to.split('5000')[1]}
         </a>
       </p>
       <p>
-        From:{' '}
+        Original:{' '}
         <a target='_blank' rel='noopener noreferrer' href={link.from}>
           {link.from}
         </a>
@@ -21,8 +21,7 @@ export const LinkCard = ({ link }) => {
         Link clicks: <strong>{link.clicks}</strong>
       </p>
       <p>
-        Date of creation:{' '}
-        <strong>{new Date(link.date).toLocaleDateString()}</strong>
+        Date: <strong>{new Date(link.date).toLocaleDateString()}</strong>
       </p>
     </div>
   );
