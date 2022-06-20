@@ -1,6 +1,6 @@
-# fullstack-mini-url
+# mern-mini-url
 
-This is url shortener application made with usage of MERN stack. In this repo you can find both server and client code, configurations and other stuff
+Full-stack application where you can shorten your links, made with MERN stack. In this repo you can find both server and client code, and some configuration files
 
 # How to install dependencies
 
