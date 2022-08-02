@@ -1,4 +1,4 @@
-# Mini URL with MERN
+# Short Your URL
 
 ### Dependencies
 
